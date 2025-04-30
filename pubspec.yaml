@@ -1,7 +1,6 @@
 name: portfolio
 description: "A new Flutter project."
 publish_to: "none"
-
 version: 1.0.0+1
 
 environment:
@@ -10,12 +9,111 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
+
+  # For State Management:
+  bloc: ^9.0.0
+  flutter_bloc: ^9.1.0
+  bloc_presentation: ^1.1.0
+
+  # For UI:
+  gap: ^3.0.1
+  mix: ^1.5.4
+  flutter_markdown: ^0.7.6+2
+  loading_indicator: ^3.1.1
+
+  # For localization:
+  intl: ^0.19.0
+  flutter_localizations:
+    sdk: flutter
+  slang: ^4.5.0
+  slang_flutter: ^4.5.0
+
+  # For Responsive Design:
+  responsive_framework: ^1.5.1
+  # For vector graphics:
+  vector_graphics: ^1.1.18
+
+  # For navigation:
+  go_router: ^14.8.1
+
+  # Animation:
+  flutter_animate: ^4.5.2
 
 dev_dependencies:
+  # For linting:
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  # For vector graphics:
+  vector_graphics_compiler: ^1.1.16
+
+  # For code generation:
+  build_runner: ^2.4.15
+  build_verify: ^3.1.0
+  slang_build_runner: ^4.5.0
+  flutter_gen_runner: ^5.10.0
+  go_router_builder: ^2.8.2
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - path: assets/icons/
+      transformers:
+        - package: vector_graphics_compiler
+  fonts:
+    - family: Sora
+      fonts:
+        - asset: assets/fonts/GHAITHSANS-Bold.otf
+          weight: 700
+    - family: IBM Plex Sans
+      fonts:
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-Thin.ttf
+          weight: 100
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-ExtraLight.ttf
+          weight: 200
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-Light.ttf
+          weight: 300
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-Regular.ttf
+          weight: 400
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-Medium.ttf
+          weight: 500
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-SemiBold.ttf
+          weight: 600
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-Bold.ttf
+          weight: 700
+        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-BoldItalic.ttf
+          weight: 700
+          style: italic
+
+# Install the package globally: dart pub global activate flutter_gen
+# Run with: dart run build_runner build
+flutter_gen:
+  output: lib/core/constants/gen/
+  line_length: 80
+  fonts:
+    enabled: false
+  colors:
+    enabled: false
+  assets:
+    enabled: true
+    outputs:
+      class_name: AppAssets

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class IntroductionDesktopPage extends StatelessWidget {
-  final Widget title;
-  final Widget description;
+  final Widget introText;
   final Widget socialIconsRow;
   final Widget cvDownloadButton;
   final Widget backgroundHiText;
@@ -11,8 +10,7 @@ class IntroductionDesktopPage extends StatelessWidget {
 
   const IntroductionDesktopPage({
     super.key,
-    required this.title,
-    required this.description,
+    required this.introText,
     required this.socialIconsRow,
     required this.cvDownloadButton,
     required this.backgroundHiText,
@@ -23,35 +21,36 @@ class IntroductionDesktopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: IntrinsicHeight(
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Align(
-              alignment: AlignmentDirectional.topEnd,
-              child: backgroundShadow,
-            ),
-            backgroundHiText,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    title,
-                    description,
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-
-                      children: [cvDownloadButton, socialIconsRow],
-                    ),
-                  ],
-                ),
-                profileImageWidget,
-              ],
-            ),
-          ],
+      body: Padding(
+        padding: EdgeInsets.only(top: 30),
+        child: IntrinsicHeight(
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Align(
+                alignment: AlignmentDirectional.topEnd,
+                child: backgroundShadow,
+              ),
+              backgroundHiText,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      introText,
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [cvDownloadButton, socialIconsRow],
+                      ),
+                    ],
+                  ),
+                  profileImageWidget,
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

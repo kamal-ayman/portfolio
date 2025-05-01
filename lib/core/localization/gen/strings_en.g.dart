@@ -66,6 +66,7 @@ class TranslationsIntroEn {
 	String get title => 'Flutter Developer';
 	String get description => 'I am a Flutter developer with a passion for creating beautiful and functional applications. I have experience in building mobile applications using Flutter and Dart, and I am always eager to learn new technologies and improve my skills.';
 	String get hi => 'HI';
+	String get downloadCV => 'Download CV';
 }
 
 // Path: errors
@@ -100,6 +101,7 @@ extension on Translations {
 			case 'intro.title': return 'Flutter Developer';
 			case 'intro.description': return 'I am a Flutter developer with a passion for creating beautiful and functional applications. I have experience in building mobile applications using Flutter and Dart, and I am always eager to learn new technologies and improve my skills.';
 			case 'intro.hi': return 'HI';
+			case 'intro.downloadCV': return 'Download CV';
 			case 'errors.not_found.title': return 'Page Not Found';
 			case 'errors.not_found.message': return 'The page you are looking for does not exist.';
 			default: return null;

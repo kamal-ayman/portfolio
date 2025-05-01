@@ -7,7 +7,8 @@
         "subtitle": "I am Kamal Ayman",
         "title": "Flutter Developer",
         "description": "I am a Flutter developer with a passion for creating beautiful and functional applications. I have experience in building mobile applications using Flutter and Dart, and I am always eager to learn new technologies and improve my skills.",
-        "hi": "HI"
+        "hi": "HI",
+        "downloadCV": "Download CV"
     },
     "errors": {
         "not_found": {

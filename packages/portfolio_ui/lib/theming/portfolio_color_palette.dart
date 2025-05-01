@@ -71,7 +71,7 @@ final class PortfolioColorPalette {
     grey4: Color(0xff22272c),
     grey5: Color(0xff636363),
     grey6: Color(0xff1b262e),
-    background: Color(0xff0c1115),
+    background: Color(0xfffdfdff),
     background2: Color(0xff0e1418),
     background3: Color(0xff10171c),
     background4: Color(0xff151b1f),

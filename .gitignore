@@ -48,3 +48,4 @@ app.*.map.json
 build.yaml
 pubspec.lock
 .vscode/settings.json
+makefile

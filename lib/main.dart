@@ -1,26 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:portfolio/app/portfolio.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'app/portfolio_requirements.dart';
+import 'features/features.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: Scaffold(
-        body: Column(
-          children: [
-            // TODO: test portfolio_ui
-          ],
-        ),
-      ),
-    );
-  }
+Future<void> main() async {
+  final requirements = await PortfolioRequirements.initialize();
+  runApp(Portfolio(requirements: requirements));
 }

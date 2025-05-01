@@ -39,6 +39,12 @@ dependencies:
   # Animation:
   flutter_animate: ^4.5.2
 
+  #internal packages
+  portfolio_ui:
+    path: packages/portfolio_ui
+  portfolio_core:
+    path: packages/portfolio_core
+
 dev_dependencies:
   # For linting:
   flutter_lints: ^5.0.0

@@ -7,10 +7,10 @@ environment:
   sdk: ^3.7.2
   flutter: ">=1.17.0"
 
-# Add regular dependencies here.
 dependencies:
   flutter:
     sdk: flutter
+
   # For UI and styling:
   mix: ^1.5.4
   gap: ^3.0.1

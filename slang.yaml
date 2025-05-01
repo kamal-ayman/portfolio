@@ -2,4 +2,4 @@ output_directory: lib/core/localization/gen
 input_file_pattern: .i18n.json
 input_directory: lib/core/localization/i18n
 paramCase: camel
-base_locale: ar
+base_locale: en

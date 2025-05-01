@@ -54,11 +54,7 @@ class LocaleManager {
   /// Returns the resolved locale for initial application setup.
   static Future<Locale> getInitialLocale() async {
     try {
-      final languageCode = null;
-      if (languageCode == null) {
-        _logger.info('No cached locale found, using device locale');
-        return validateDeviceLocale();
-      }
+      final languageCode = 'en';
 
       final Locale locale = Locale(languageCode);
       final bool isSupported = isLocaleSupported(locale);

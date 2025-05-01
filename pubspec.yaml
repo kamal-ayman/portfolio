@@ -28,8 +28,6 @@ dependencies:
   slang: ^4.5.0
   slang_flutter: ^4.5.0
 
-  # For Responsive Design:
-  responsive_framework: ^1.5.1
   # For vector graphics:
   vector_graphics: ^1.1.18
 

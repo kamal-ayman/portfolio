@@ -9,6 +9,8 @@ final class PortfolioColorPalette {
   final Color accent1;
   final Color accent2;
   final Color scrollbarPrimary;
+  final Color headingPrimary;
+  final Color headingSecondary;
   final Color scrollbarSecondary;
   final Color grey1;
   final Color grey2;
@@ -22,6 +24,7 @@ final class PortfolioColorPalette {
   final Color background4;
   final Color border;
   final Color border1;
+  final Color errorColor;
 
   const PortfolioColorPalette({
     required this.primary,
@@ -32,6 +35,8 @@ final class PortfolioColorPalette {
     required this.accent1,
     required this.accent2,
     required this.scrollbarPrimary,
+    required this.headingPrimary,
+    required this.headingSecondary,
     required this.scrollbarSecondary,
     required this.grey1,
     required this.grey2,
@@ -45,6 +50,7 @@ final class PortfolioColorPalette {
     required this.background4,
     required this.border,
     required this.border1,
+    required this.errorColor,
   });
 
   static const light = PortfolioColorPalette(
@@ -56,6 +62,8 @@ final class PortfolioColorPalette {
     accent1: Color(0xff0f0715),
     accent2: Color(0xff140c1c),
     scrollbarPrimary: Color(0xff8750f7),
+    headingPrimary: Color(0xff8750f7),
+    headingSecondary: Color(0xffffffff),
     scrollbarSecondary: Color(0xff2a1454),
     grey1: Color(0xff747779),
     grey2: Color(0xffd9d9d9),
@@ -69,6 +77,7 @@ final class PortfolioColorPalette {
     background4: Color(0xff151b1f),
     border: Color(0xff1b2227),
     border1: Color(0xff2a343c),
+    errorColor: Color(0xffF41A1A),
   );
 
   static const dark = PortfolioColorPalette(
@@ -80,6 +89,8 @@ final class PortfolioColorPalette {
     accent1: Color(0xff0f0715),
     accent2: Color(0xff140c1c),
     scrollbarPrimary: Color(0xff8750f7),
+    headingPrimary: Color(0xff8750f7),
+    headingSecondary: Color(0xffffffff),
     scrollbarSecondary: Color(0xff2a1454),
     grey1: Color(0xff747779),
     grey2: Color(0xffd9d9d9),
@@ -93,5 +104,6 @@ final class PortfolioColorPalette {
     background4: Color(0xff151b1f),
     border: Color(0xff1b2227),
     border1: Color(0xff2a343c),
+    errorColor: Color(0xffF41A1A),
   );
 }

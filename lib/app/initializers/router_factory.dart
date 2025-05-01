@@ -21,9 +21,7 @@ class RouterFactory {
 
   static Future<String?> checkInitialRoute() async {
     try {
-      String? initialRoute;
-
-      return initialRoute;
+      return null;
     } catch (e, s) {
       _logger.error('Error checking initial route', e, s);
       return null;

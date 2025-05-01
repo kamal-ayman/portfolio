@@ -10,15 +10,9 @@ List<RouteBase> get $appRoutes => [$homePageRoute];
 
 RouteBase get $homePageRoute => GoRouteData.$route(
   path: '/',
+  name: 'home',
 
   factory: $HomePageRouteExtension._fromState,
-  routes: [
-    GoRouteData.$route(
-      path: 'home',
-
-      factory: $HomePageRouteExtension._fromState,
-    ),
-  ],
 );
 
 extension $HomePageRouteExtension on HomePageRoute {

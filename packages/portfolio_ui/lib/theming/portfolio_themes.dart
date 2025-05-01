@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mix/mix.dart';
 import 'package:portfolio_ui/portfolio_ui.dart';
 
@@ -26,32 +27,35 @@ final class PortfolioTheme {
     final colorTokens = $portfolioToken.color;
     final radiusTokens = $portfolioToken.radius;
     final styleTokens = $portfolioToken.textStyle;
-    final fontFamily = 'Sora';
+    final fontFamily = GoogleFonts.sora().fontFamily ?? 'Sora';
     // ![TODO] add a fallback font family for the fonts that are not available in the system
-    final fallbackFontFamily = 'Sora';
+    final fallbackFontFamily = GoogleFonts.sora().fontFamily ?? 'Sora';
     return MixThemeData(
       colors: {
-        colorTokens.primary: palette.primary,
-        colorTokens.primary1: palette.primary1,
-        colorTokens.primary2: palette.primary2,
-        colorTokens.primary3: palette.primary3,
-        colorTokens.secondary: palette.secondary,
-        colorTokens.accent1: palette.accent1,
-        colorTokens.accent2: palette.accent2,
-        colorTokens.scrollbarPrimary: palette.scrollbarPrimary,
-        colorTokens.scrollbarSecondary: palette.scrollbarSecondary,
         colorTokens.grey1: palette.grey1,
         colorTokens.grey2: palette.grey2,
         colorTokens.grey3: palette.grey3,
         colorTokens.grey4: palette.grey4,
         colorTokens.grey5: palette.grey5,
         colorTokens.grey6: palette.grey6,
+        colorTokens.border: palette.border,
+        colorTokens.border1: palette.border1,
+        colorTokens.accent1: palette.accent1,
+        colorTokens.accent2: palette.accent2,
+        colorTokens.primary: palette.primary,
+        colorTokens.primary1: palette.primary1,
+        colorTokens.primary2: palette.primary2,
+        colorTokens.primary3: palette.primary3,
+        colorTokens.secondary: palette.secondary,
+        colorTokens.errorColor: palette.errorColor,
         colorTokens.background: palette.background,
         colorTokens.background2: palette.background2,
         colorTokens.background3: palette.background3,
         colorTokens.background4: palette.background4,
-        colorTokens.border: palette.border,
-        colorTokens.border1: palette.border1,
+        colorTokens.scrollbarPrimary: palette.scrollbarPrimary,
+        colorTokens.scrollbarSecondary: palette.scrollbarSecondary,
+        colorTokens.headingPrimary: palette.headingPrimary,
+        colorTokens.headingSecondary: palette.headingSecondary,
       }..addAll(colorOverrides),
       textStyles: {
         // headline
@@ -192,6 +196,7 @@ final class PortfolioTheme {
         ),
       ),
     );
+
     return defaultThemeData.copyWith(
       scaffoldBackgroundColor: backgroundColor,
       colorScheme: ColorScheme.fromSeed(seedColor: context.primary1Color),

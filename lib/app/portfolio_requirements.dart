@@ -39,9 +39,7 @@ final class PortfolioRequirements {
   /// - Router configuration
   ///
   /// Returns a fully initialized [PortfolioRequirements] instance
-  static Future<PortfolioRequirements> initialize({
-    String? mandatoryStartupRoute,
-  }) async {
+  static Future<PortfolioRequirements> initialize() async {
     WidgetsFlutterBinding.ensureInitialized();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -63,17 +61,13 @@ final class PortfolioRequirements {
     ]);
 
     final config = AppConfigEntity.fallbackInstance;
-
-    // Get maintenance and version status & initialize authentication in parallel
-    final initialRoute = null;
+    final routerConfig = RouterFactory.createRouter();
 
     return PortfolioRequirements(
       config: config,
       locale: locale,
       brightness: brightness,
-      routerConfig: RouterFactory.createRouter(
-        initialRoute: mandatoryStartupRoute ?? initialRoute,
-      ),
+      routerConfig: routerConfig,
     );
   }
 }

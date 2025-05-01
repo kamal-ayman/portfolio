@@ -7,6 +7,6 @@ class HomeWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HomePage(introduction: IntroductionWrapper());
+    return HomePage(introduction: const IntroductionWrapper());
   }
 }

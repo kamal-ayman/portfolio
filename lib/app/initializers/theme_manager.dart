@@ -12,15 +12,7 @@ class ThemeManager {
     final platformBrightness = PlatformDispatcher.instance.platformBrightness;
 
     try {
-      final brightness = null;
-
-      // If there is no cached brightness, we will use the device brightness
-      if (brightness == null) {
-        _logger.info(
-          'No cached brightness found, using platform brightness: $platformBrightness',
-        );
-        return platformBrightness;
-      }
+      final brightness = 'light';
 
       final bool isSupported = ['light', 'dark'].contains(brightness);
       if (!isSupported) {

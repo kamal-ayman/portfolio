@@ -28,4 +28,9 @@ class AppConfigEntity {
       darkColorPalette: darkColorPalette ?? this.darkColorPalette,
     );
   }
+
+  @override
+  String toString() {
+    return 'AppConfigEntity(logoURL: $logoURL, lightColorPalette: $lightColorPalette, darkColorPalette: $darkColorPalette)';
+  }
 }

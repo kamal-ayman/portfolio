@@ -6,7 +6,7 @@ import '../../features/features.dart';
 
 part 'app_routes.g.dart';
 
-@TypedGoRoute<HomePageRoute>(path: '/')
+@TypedGoRoute<HomePageRoute>(path: '/', name: 'home')
 final class HomePageRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {

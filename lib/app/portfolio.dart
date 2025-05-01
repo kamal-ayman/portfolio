@@ -21,15 +21,44 @@ final class Portfolio extends StatelessWidget {
     final darkTheme = PortfolioTheme.fromPortfolioColorPalette(
       config.darkColorPalette,
     );
-    return MaterialApp.router(
-      locale: requirements.locale,
-      debugShowCheckedModeBanner: false,
-      routerConfig: requirements.routerConfig,
-      supportedLocales: AppLocaleUtils.supportedLocales,
-      themeMode: isLightMode ? ThemeMode.light : ThemeMode.dark,
-      localizationsDelegates: GlobalMaterialLocalizations.delegates,
-      theme: PortfolioTheme.materialThemeDataFromTheme(lightTheme, context),
-      darkTheme: PortfolioTheme.materialThemeDataFromTheme(darkTheme, context),
+    return TranslationProvider(
+      child: PortfolioThemeProvider(
+        darkTheme: darkTheme,
+        lightTheme: lightTheme,
+        brightness: brightness,
+        child: Builder(
+          builder: (context) {
+            return MaterialApp.router(
+              locale: requirements.locale,
+              debugShowCheckedModeBanner: false,
+              supportedLocales: AppLocaleUtils.supportedLocales,
+              localizationsDelegates: GlobalMaterialLocalizations.delegates,
+              routerConfig: requirements.routerConfig,
+              localeResolutionCallback: (locale, supportedLocales) {
+                if (locale == null) {
+                  return supportedLocales.first;
+                }
+                for (var supportedLocale in supportedLocales) {
+                  if (supportedLocale.languageCode == locale.languageCode) {
+                    return supportedLocale;
+                  }
+                }
+                return supportedLocales.first;
+              },
+
+              themeMode: isLightMode ? ThemeMode.light : ThemeMode.dark,
+              theme: PortfolioTheme.materialThemeDataFromTheme(
+                lightTheme,
+                context,
+              ),
+              darkTheme: PortfolioTheme.materialThemeDataFromTheme(
+                darkTheme,
+                context,
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }

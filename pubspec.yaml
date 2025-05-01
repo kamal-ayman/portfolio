@@ -64,45 +64,20 @@ flutter:
   fonts:
     - family: Sora
       fonts:
-        - asset: assets/fonts/GHAITHSANS-Bold.otf
-          weight: 700
-    - family: IBM Plex Sans
-      fonts:
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-Thin.ttf
+        - asset: packages/portfolio_ui/lib/assets/fonts/sora/Sora-Thin.ttf
           weight: 100
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-ThinItalic.ttf
-          weight: 100
-          style: italic
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-ExtraLight.ttf
+        - asset: packages/portfolio_ui/lib/assets/fonts/sora/Sora-ExtraLight.ttf
           weight: 200
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-ExtraLightItalic.ttf
-          weight: 200
-          style: italic
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-Light.ttf
+        - asset: packages/portfolio_ui/lib/assets/fonts/sora/Sora-Light.ttf
           weight: 300
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-LightItalic.ttf
-          weight: 300
-          style: italic
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-Regular.ttf
+        - asset: packages/portfolio_ui/lib/assets/fonts/sora/Sora-Regular.ttf
           weight: 400
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-Italic.ttf
-          weight: 400
-          style: italic
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-Medium.ttf
+        - asset: packages/portfolio_ui/lib/assets/fonts/sora/Sora-Medium.ttf
           weight: 500
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-MediumItalic.ttf
-          weight: 500
-          style: italic
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-SemiBold.ttf
+        - asset: packages/portfolio_ui/lib/assets/fonts/sora/Sora-SemiBold.ttf
           weight: 600
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-SemiBoldItalic.ttf
-          weight: 600
-          style: italic
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-Bold.ttf
+        - asset: packages/portfolio_ui/lib/assets/fonts/sora/Sora-Bold.ttf
           weight: 700
-        - asset: packages/portfolio_ui/lib/assets/fonts/IBMPlexSans-BoldItalic.ttf
-          weight: 700
-          style: italic
 
 # Install the package globally: dart pub global activate flutter_gen
 # Run with: dart run build_runner build

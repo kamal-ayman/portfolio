@@ -43,3 +43,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/tredat_cli
+*.env
+build.yaml
+pubspec.lock
+.vscode/settings.json

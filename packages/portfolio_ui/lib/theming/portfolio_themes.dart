@@ -27,9 +27,8 @@ final class PortfolioTheme {
     final colorTokens = $portfolioToken.color;
     final radiusTokens = $portfolioToken.radius;
     final styleTokens = $portfolioToken.textStyle;
-    final fontFamily = GoogleFonts.sora().fontFamily ?? 'Sora';
-    // ![TODO] add a fallback font family for the fonts that are not available in the system
-    final fallbackFontFamily = GoogleFonts.sora().fontFamily ?? 'Sora';
+    final fontFamily = GoogleFonts.ibmPlexSans().fontFamily ?? 'Sora';
+    final fallbackFontFamily = GoogleFonts.ibmPlexSansArabic().fontFamily ?? 'Sora';
     return MixThemeData(
       colors: {
         colorTokens.grey1: palette.grey1,

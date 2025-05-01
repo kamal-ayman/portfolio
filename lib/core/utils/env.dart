@@ -1,33 +1,24 @@
-/// Repository mode used to determine which implementation to use.
-///
-/// Controls whether to use mock implementations for testing or
-/// real implementations for production use.
-enum RepositoryMode {
-  /// Mock implementation for testing.
-  mock,
-
-  /// NACD production implementation.
-  portfolio;
-
-  /// Converts a string into the corresponding [RepositoryMode].
-  ///
-  /// Returns [RepositoryMode.portfolio] if the string doesn't match any mode.
-  ///
-  /// [variableValue] is the string representation of the repository mode.
-  static RepositoryMode getRepositoryMode(String variableValue) {
-    final mode = RepositoryMode.values.firstWhere((e) {
-      return e.name == variableValue.toLowerCase();
-    }, orElse: () => RepositoryMode.portfolio);
-    return mode;
-  }
-}
-
-/// Environment configuration for the application.
-///
-/// Provides access to all environment variables used throughout the app.
-/// Variables are set at build time using `--dart-define`.
 final class Env {
   Env._();
 
-  // General configuration
+  static const String cvUrl = String.fromEnvironment(
+    'CV_URL',
+    defaultValue: 'https://www.linkedin.com/in/kamal-ayman/',
+  );
+  static const String email = String.fromEnvironment(
+    'EMAIL',
+    defaultValue: 'kamal.ayman522@gmail.com',
+  );
+  static const String phone = String.fromEnvironment(
+    'PHONE',
+    defaultValue: '+20 120 125 0706',
+  );
+  static const String github = String.fromEnvironment(
+    'GITHUB',
+    defaultValue: 'https://github.com/kamal-ayman',
+  );
+  static const String linkedIn = String.fromEnvironment(
+    'LINKED_IN',
+    defaultValue: 'https://www.linkedin.com/in/kamal-ayman/',
+  );
 }

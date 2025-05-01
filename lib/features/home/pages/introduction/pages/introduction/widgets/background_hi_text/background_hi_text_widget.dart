@@ -15,20 +15,22 @@ class BackgroundHiTextWidget extends StatelessWidget {
         Paint()
           ..style = PaintingStyle.stroke
           ..strokeWidth = 1
+          ..color = context.primaryColor
           ..blendMode = BlendMode.srcOver;
     return Center(
       child: AnimatedBuilder(
         animation: animation,
         builder: (context, child) {
-          return StyledText(
-            t.intro.hi,
-            style: Style(
-              $text.style.as(context.h1TextStyle.copyWith(foreground: paint)),
-              $text.style.fontSize(animation.value * 200),
-              $text.style.fontWeight(FontWeight.w900),
-            ),
-          );
+          return Transform.scale(scale: animation.value, child: child);
         },
+        child: StyledText(
+          t.intro.hi,
+          style: Style(
+            $text.style.as(context.h1TextStyle.copyWith(foreground: paint)),
+            $text.style.fontSize(200),
+            $text.style.fontWeight(FontWeight.w400),
+          ),
+        ),
       ),
     );
   }

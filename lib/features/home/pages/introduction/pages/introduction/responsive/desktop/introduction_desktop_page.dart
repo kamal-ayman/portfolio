@@ -21,35 +21,39 @@ class IntroductionDesktopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.only(top: 30),
-        child: IntrinsicHeight(
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Align(
-                alignment: AlignmentDirectional.topEnd,
-                child: backgroundShadow,
-              ),
-              backgroundHiText,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      introText,
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [cvDownloadButton, socialIconsRow],
-                      ),
-                    ],
-                  ),
-                  profileImageWidget,
-                ],
-              ),
-            ],
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.only(top: 30),
+          child: IntrinsicHeight(
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Align(
+                  alignment: AlignmentDirectional.topEnd,
+                  child: backgroundShadow,
+                ),
+                backgroundHiText,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      spacing: 20,
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        introText,
+                        Row(
+                          spacing: 20,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [cvDownloadButton, socialIconsRow],
+                        ),
+                      ],
+                    ),
+                    profileImageWidget,
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

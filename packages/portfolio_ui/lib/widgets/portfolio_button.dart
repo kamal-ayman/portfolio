@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:mix/mix.dart';
 import 'package:portfolio_ui/portfolio_ui.dart';
 
@@ -59,15 +60,15 @@ final class PortfolioButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final defaultButtonColor = context.primary1Color;
-    final defaultTextColor = textColor ?? context.primary2Color;
+    final defaultButtonColor = context.primaryColor;
+    final defaultTextColor = textColor ?? context.primaryColor;
     Color buttonColor = color ?? defaultButtonColor;
     buttonColor = _withDisabledState(buttonColor);
     final isOutLined = type == PortfolioButtonType.outlined;
     final isSmall = size == PortfolioButtonSize.small;
     final buttonTextStyle =
         textStyle ??
-        (isSmall ? context.h6TextStyle : context.h5TextStyle).copyWith(
+        (isSmall ? context.smallTextStyle : context.buttonsTextStyle).copyWith(
           color: defaultTextColor,
         );
     Color finalTextColor =
@@ -78,26 +79,32 @@ final class PortfolioButton extends StatelessWidget {
       style: Style(
             $box.color(buttonColor),
             $box.alignment.center(),
-            $box.borderRadius.circular(context.mediumRadius.x),
+            $box.borderRadius.circular(context.largeRadius.x),
             $text.style.as(buttonTextStyle),
             _outlinedVariant(
               $box.color(Colors.transparent),
-              $box.border(color: buttonColor, width: 1),
+              $on.hover($box.color(buttonColor)),
+              $box.border.color(buttonColor),
+              $box.border.width(.5),
               $text.style.as(
                 (textStyle ?? buttonTextStyle).copyWith(color: buttonColor),
               ),
+              $icon.color(buttonColor),
             ),
             _loadingVariant(
               $box.color(buttonColor.withValues(alpha: 0.7)),
               _outlinedVariant($box.color(Colors.transparent)),
             ),
+
             ($on.hover & _enabledVariant)(
-              $box.color(buttonColor.brighten(10)),
-              $text.color(finalTextColor.brighten(10)),
+              $box.color(buttonColor.brighten(100)),
+              $text.color(context.backgroundColor),
+              $icon.color(context.backgroundColor),
             ),
             ($on.press & _enabledVariant)(
-              $box.color(buttonColor.darken(10)),
-              $text.color(finalTextColor.darken(10)),
+              $box.color(buttonColor.brighten(100)),
+              $text.color(context.secondaryColor),
+              $icon.color(context.secondaryColor),
             ),
           )
           .addAll([
@@ -107,7 +114,7 @@ final class PortfolioButton extends StatelessWidget {
               $box.padding.vertical(10),
               _smallVariant($box.padding.vertical(8)),
               if (width == null) ...[
-                $box.padding.horizontal(12),
+                $box.padding.horizontal(20),
                 _smallVariant($box.padding.horizontal(10)),
               ],
             ],
@@ -131,7 +138,12 @@ final class PortfolioButton extends StatelessWidget {
                   ),
                 ),
               )
-              : StyledText(text),
+              : Row(
+                children: [
+                  StyledText(text),
+                  if (suffixIcon != null) ...[const Gap(8), suffixIcon!],
+                ],
+              ),
     );
   }
 }

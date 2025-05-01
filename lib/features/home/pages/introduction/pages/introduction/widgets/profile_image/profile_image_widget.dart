@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
+import 'package:portfolio/core/core.dart';
 
 import 'package:portfolio_ui/portfolio_ui.dart';
 
@@ -46,7 +47,7 @@ class ProfileImageWidget extends StatelessWidget {
               $box.clipBehavior.antiAliasWithSaveLayer(),
               $box.borderRadius.all(context.largeRadius.x),
             ).applyVariants([if (isHovering) _hover]),
-            child: Image.asset('assets/profile_pic.webp', fit: BoxFit.cover),
+            child: Image.asset(AppAssets.profilePic.path, fit: BoxFit.cover),
           ),
         ),
       ),

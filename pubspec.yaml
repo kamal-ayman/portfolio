@@ -7,6 +7,7 @@ environment:
   sdk: ^3.7.2
 
 dependencies:
+  cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
 
@@ -33,6 +34,11 @@ dependencies:
 
   # For navigation:
   go_router: ^14.8.1
+
+  # Utils:
+  equatable: ^2.0.7
+  url_launcher: ^6.3.1
+  path_provider: ^2.1.5
 
   # Animation:
   flutter_animate: ^4.5.2

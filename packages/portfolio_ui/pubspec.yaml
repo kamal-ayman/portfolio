@@ -24,6 +24,7 @@ dependencies:
   vector_graphics: ^1.1.18
   cached_network_image: ^3.4.1
   transparent_image: ^2.0.1
+
   portfolio_core:
     path: ../portfolio_core
 

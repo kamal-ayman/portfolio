@@ -27,7 +27,7 @@ class TitleTextWidget extends StatelessWidget {
               _mobile($text.fontSize(16)),
               _tablet($text.fontSize(30)),
               _desktop(),
-              $text.fontWeight.w900(),
+              $text.fontWeight.w700(),
               $text.color(context.secondaryColor),
               $text.textAlign.justify(),
               $text.animated.curve.easeInOut(),
@@ -44,7 +44,7 @@ class TitleTextWidget extends StatelessWidget {
               _mobile($text.style.as(context.h3TextStyle)),
               _tablet($text.style.as(context.h2TextStyle)),
               _desktop($text.style.as(context.h1TextStyle)),
-
+              $text.fontWeight.w900(),
               $text.textAlign.justify(),
               $text.animated.curve.easeInOut(),
               $text.animated.duration.milliseconds(350),

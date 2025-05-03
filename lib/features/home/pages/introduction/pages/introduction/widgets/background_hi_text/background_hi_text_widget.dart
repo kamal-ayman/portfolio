@@ -20,7 +20,7 @@ class BackgroundHiTextWidget extends StatelessWidget {
         Paint()
           ..style = PaintingStyle.stroke
           ..strokeWidth = 2
-          ..color = context.primaryColor.withValues(alpha: .1)
+          ..color = context.primaryColor.withValues(alpha: .2)
           ..blendMode = BlendMode.srcOver;
     return Center(
       child: AnimatedBuilder(
@@ -32,9 +32,9 @@ class BackgroundHiTextWidget extends StatelessWidget {
           t.intro.hi,
           style: Style(
             $text.style.as(context.h1TextStyle.copyWith(foreground: paint)),
-            _mobile($text.style.fontSize(100)),
-            _tablet($text.style.fontSize(200)),
-            _desktop($text.style.fontSize(300)),
+            _mobile($text.style.fontSize(200)),
+            _tablet($text.style.fontSize(300)),
+            _desktop($text.style.fontSize(400)),
             $text.textAlign.justify(),
             $text.fontFamily('Bold'),
             $text.fontWeight.w500(),

@@ -53,7 +53,11 @@ class ProfileImageWidget extends StatelessWidget {
               _desktop($box.width(300), $box.height(350)),
               $box.animated.curve.easeInOut(),
               $box.animated.duration.milliseconds(350),
-              _hover($box.border.color(context.primary1Color)),
+              _hover(
+                $box.border.color(context.primary1Color),
+                $box.clipBehavior.antiAliasWithSaveLayer(),
+                $box.borderRadius.all(context.largeRadius.x),
+              ),
             ).applyVariants([
               if (isHovering) _hover,
               if (context.isMobile) _mobile,

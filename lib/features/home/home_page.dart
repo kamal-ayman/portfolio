@@ -9,12 +9,14 @@ import 'dart:js_interop';
 external void reloadPage();
 
 class HomePage extends StatelessWidget {
+  final Widget experience;
   final Widget introduction;
   final IndicatorController controller;
 
   const HomePage({
     super.key,
     required this.controller,
+    required this.experience,
     required this.introduction,
   });
 
@@ -33,6 +35,7 @@ class HomePage extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           slivers: [
             SliverToBoxAdapter(child: introduction),
+            SliverToBoxAdapter(child: experience),
           ],
         ),
       ),

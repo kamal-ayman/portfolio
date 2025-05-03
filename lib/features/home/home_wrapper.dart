@@ -31,6 +31,7 @@ class _HomeWrapperState extends State<HomeWrapper> {
     return HomePage(
       controller: controller,
       introduction: const IntroductionWrapper(),
+      experience: const ExperienceWrapper(),
     );
   }
 }

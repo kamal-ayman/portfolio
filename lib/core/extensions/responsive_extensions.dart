@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
-extension ResponsiveExtensions on BoxConstraints {
-  bool get isMobile => maxWidth < 600;
-  bool get isDesktop => maxWidth >= 1200;
+extension BuildContextResponsiveExtensions on BuildContext {
+  bool get isMobile => MediaQuery.sizeOf(this).width < 600;
+  bool get isDesktop => MediaQuery.sizeOf(this).width >= 1200;
+  bool get isTablet => !isMobile && !isDesktop;
 }

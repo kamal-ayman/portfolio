@@ -20,14 +20,7 @@ class _BackgroundHiTextWrapperState extends State<BackgroundHiTextWrapper>
       lowerBound: .9,
       duration: const Duration(seconds: 2),
     );
-    controller.forward();
-    controller.addListener(() {
-      if (controller.isCompleted) {
-        controller.reverse().whenComplete(() {
-          controller.forward();
-        });
-      }
-    });
+    controller.repeat(reverse: true);
     super.initState();
   }
 

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mix/mix.dart';
 import 'package:portfolio_ui/portfolio_ui.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
@@ -17,7 +18,7 @@ class _IconWidgetState extends State<IconWidget> {
   late final ValueNotifier<bool> isHovering;
   @override
   void initState() {
-    isHovering = ValueNotifier(false);
+    isHovering = ValueNotifier<bool>(false);
     super.initState();
   }
 
@@ -31,23 +32,26 @@ class _IconWidgetState extends State<IconWidget> {
   Widget build(BuildContext context) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
-      onEnter: (event) {
-        isHovering.value = true;
-        setState(() {});
-      },
-      onExit: (event) {
-        isHovering.value = false;
-        setState(() {});
-      },
-      child: Padding(
-        padding: EdgeInsets.all(widget.radius * 0.25),
-        child: VectorGraphic(
-          colorFilter: ColorFilter.mode(
-            isHovering.value ? context.backgroundColor : context.primaryColor,
-            BlendMode.srcIn,
-          ),
-
-          loader: AssetBytesLoader(widget.icon),
+      onExit: (event) => isHovering.value = false,
+      onEnter: (event) => isHovering.value = true,
+      child: Box(
+        style: Style(
+          $box.shape.circle(),
+          $box.margin.all(widget.radius * .25),
+          $box.animated.curve.easeInOut(),
+          $box.animated.duration.milliseconds(350),
+        ),
+        child: ValueListenableBuilder<bool>(
+          valueListenable: isHovering,
+          builder: (context, value, child) {
+            return VectorGraphic(
+              colorFilter: ColorFilter.mode(
+                value ? context.backgroundColor : context.primaryColor,
+                BlendMode.srcIn,
+              ),
+              loader: AssetBytesLoader(widget.icon),
+            );
+          },
         ),
       ),
     );

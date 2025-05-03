@@ -7,6 +7,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: introduction);
+    return Scaffold(
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        child: Column(children: [introduction]),
+      ),
+    );
   }
 }

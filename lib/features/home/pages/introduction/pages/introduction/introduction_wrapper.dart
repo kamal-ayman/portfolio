@@ -8,7 +8,7 @@ class IntroductionWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IntroductionPage(
-      mobile: const IntroductionDesktopWrapper(),
+      mobile: const IntroductionMobileWrapper(),
       desktop: const IntroductionDesktopWrapper(),
     );
   }

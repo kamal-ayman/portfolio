@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 class SocialIconsWidget extends StatelessWidget {
   final List<Widget> socialIcons;
@@ -8,14 +7,17 @@ class SocialIconsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 300,
-      height: 50,
-      child: ListView.separated(
-        itemCount: socialIcons.length,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => socialIcons[index],
-        separatorBuilder: (context, index) => const Gap(18),
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: List.generate(
+        growable: false,
+        socialIcons.length,
+        (index) => Padding(
+          padding: EdgeInsets.only(
+            right: index < socialIcons.length - 1 ? 18 : 0,
+          ),
+          child: socialIcons[index],
+        ),
       ),
     );
   }

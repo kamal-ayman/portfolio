@@ -17,7 +17,7 @@ class _ProfileImageWrapperState extends State<ProfileImageWrapper>
 
   @override
   void initState() {
-    isHovering = ValueNotifier(false);
+    isHovering = ValueNotifier<bool>(false);
     controller = AnimationController(
       vsync: this,
       lowerBound: lowerBound,
@@ -37,27 +37,29 @@ class _ProfileImageWrapperState extends State<ProfileImageWrapper>
 
   @override
   Widget build(BuildContext context) {
-    return ProfileImageWidget(
-      animation: controller,
-      isHovering: isHovering.value,
-      onEnter: (details) {
-        isHovering.value = true;
-        setState(() {});
-        controller.forward();
-      },
-      onExit: (event) {
-        isHovering.value = false;
-        setState(() {});
-        controller.reverse();
-      },
-      onTap: () {
-        if (isHovering.value) {
-          controller.reverse();
-        } else {
-          controller.forward();
-        }
-        isHovering.value = !isHovering.value;
-        setState(() {});
+    return ValueListenableBuilder<bool>(
+      valueListenable: isHovering,
+      builder: (context, value, child) {
+        return ProfileImageWidget(
+          animation: controller,
+          isHovering: isHovering.value,
+          onEnter: (details) {
+            isHovering.value = true;
+            controller.forward();
+          },
+          onExit: (event) {
+            isHovering.value = false;
+            controller.reverse();
+          },
+          onTap: () {
+            if (isHovering.value) {
+              controller.reverse();
+            } else {
+              controller.forward();
+            }
+            isHovering.value = !isHovering.value;
+          },
+        );
       },
     );
   }

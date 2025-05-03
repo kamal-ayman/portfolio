@@ -73,6 +73,9 @@ flutter:
       transformers:
         - package: vector_graphics_compiler
   fonts:
+    - family: Bold
+      fonts:
+        - asset: packages/portfolio_ui/lib/assets/fonts/bold/bold.ttf
     - family: Sora
       fonts:
         - asset: packages/portfolio_ui/lib/assets/fonts/sora/Sora-Thin.ttf

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class IntroductionDesktopPage extends StatelessWidget {
-  final Widget introText;
+  final Widget titleText;
+  final Widget summaryText;
   final Widget socialIconsRow;
   final Widget cvDownloadButton;
   final Widget backgroundHiText;
@@ -10,7 +11,8 @@ class IntroductionDesktopPage extends StatelessWidget {
 
   const IntroductionDesktopPage({
     super.key,
-    required this.introText,
+    required this.titleText,
+    required this.summaryText,
     required this.socialIconsRow,
     required this.cvDownloadButton,
     required this.backgroundHiText,
@@ -20,42 +22,40 @@ class IntroductionDesktopPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.only(top: 30),
-          child: IntrinsicHeight(
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Align(
-                  alignment: AlignmentDirectional.topEnd,
-                  child: backgroundShadow,
-                ),
-                backgroundHiText,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Padding(
+      padding: EdgeInsets.only(top: 30, left: 20, right: 20),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Align(
+            alignment: AlignmentDirectional.topEnd,
+            child: backgroundShadow,
+          ),
+          backgroundHiText,
+          Row(
+            spacing: 30,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Flexible(
+                child: Column(
+                  spacing: 20,
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
+                    titleText,
+                    summaryText,
+                    Row(
                       spacing: 20,
                       mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        introText,
-                        Row(
-                          spacing: 20,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [cvDownloadButton, socialIconsRow],
-                        ),
-                      ],
+                      children: [cvDownloadButton, socialIconsRow],
                     ),
-                    profileImageWidget,
                   ],
                 ),
-              ],
-            ),
+              ),
+              profileImageWidget,
+            ],
           ),
-        ),
+        ],
       ),
     );
   }

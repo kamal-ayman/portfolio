@@ -78,7 +78,6 @@ final class PortfolioButton extends StatelessWidget {
       onPress: onTap,
       style: Style(
             $box.color(buttonColor),
-            $box.alignment.center(),
             $box.borderRadius.circular(context.largeRadius.x),
             $text.style.as(buttonTextStyle),
             _outlinedVariant(
@@ -139,6 +138,7 @@ final class PortfolioButton extends StatelessWidget {
                 ),
               )
               : Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   StyledText(text),
                   if (suffixIcon != null) ...[const Gap(8), suffixIcon!],

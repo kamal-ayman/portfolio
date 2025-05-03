@@ -43,6 +43,9 @@ dependencies:
   # Animation:
   flutter_animate: ^4.5.2
 
+  # For refresh indicators:
+  custom_refresh_indicator: ^4.0.1
+
   #internal packages
   portfolio_ui:
     path: packages/portfolio_ui

@@ -13,11 +13,7 @@ class IntroductionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Builder(
-      builder: (context) {
-        if (context.isMobile) return mobile;
-        return desktop;
-      },
-    );
+    if (context.isMobile) return mobile;
+    return desktop;
   }
 }

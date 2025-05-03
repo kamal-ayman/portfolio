@@ -23,7 +23,7 @@ class IntroductionMobilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 30, left: 20, right: 20),
+      padding: EdgeInsets.symmetric(vertical: 30, horizontal: 30),
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
@@ -39,7 +39,7 @@ class IntroductionMobilePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               titleText,
-              profileImageWidget,
+              Center(child: profileImageWidget),
               summaryText,
               Wrap(
                 spacing: 20,

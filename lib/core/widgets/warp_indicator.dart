@@ -6,10 +6,7 @@ import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 
-enum WarpAnimationState {
-  stopped,
-  playing,
-}
+enum WarpAnimationState { stopped, playing }
 
 typedef StarColorGetter = Color Function(int index);
 
@@ -47,14 +44,8 @@ class _WarpIndicatorState extends State<WarpIndicator>
   WarpAnimationState _state = WarpAnimationState.stopped;
 
   List<Star> stars = [];
-  final _offsetTween = Tween<Offset>(
-    begin: Offset.zero,
-    end: Offset.zero,
-  );
-  final _angleTween = Tween<double>(
-    begin: 0,
-    end: 0,
-  );
+  final _offsetTween = Tween<Offset>(begin: Offset.zero, end: Offset.zero);
+  final _angleTween = Tween<double>(begin: 0, end: 0);
 
   late AnimationController shakeController;
 
@@ -70,10 +61,8 @@ class _WarpIndicatorState extends State<WarpIndicator>
     super.initState();
   }
 
-  Offset _getRandomOffset() => Offset(
-        _random.nextInt(10) - 5,
-        _random.nextInt(10) - 5,
-      );
+  Offset _getRandomOffset() =>
+      Offset(_random.nextInt(10) - 5, _random.nextInt(10) - 5);
 
   double _getRandomAngle() {
     final degrees = ((_random.nextDouble() * 2) - 1);
@@ -142,45 +131,45 @@ class _WarpIndicatorState extends State<WarpIndicator>
         return Stack(
           children: <Widget>[
             AnimatedBuilder(
-                animation: shakeController,
-                builder: (_, __) {
-                  return LayoutBuilder(
-                    builder:
-                        (BuildContext context, BoxConstraints constraints) {
-                      return CustomPaint(
-                        painter: Sky(
-                          stars: stars,
-                          color: widget.skyColor,
-                        ),
-                        child: const SizedBox.expand(),
-                      );
-                    },
-                  );
-                }),
+              animation: shakeController,
+              builder: (_, __) {
+                return LayoutBuilder(
+                  builder: (BuildContext context, BoxConstraints constraints) {
+                    return CustomPaint(
+                      painter: Sky(stars: stars, color: widget.skyColor),
+                      child: const SizedBox.expand(),
+                    );
+                  },
+                );
+              },
+            ),
             AnimatedBuilder(
               animation: animation,
               builder: (context, _) {
                 return Transform.scale(
                   scale: _scaleTween.transform(controller.value),
-                  child: Builder(builder: (context) {
-                    if (shakeController.value == 1.0 &&
-                        _state == WarpAnimationState.playing) {
-                      SchedulerBinding.instance
-                          .addPostFrameCallback((_) => _resetShakeAnimation());
-                    }
-                    return Transform.rotate(
-                      angle: _angleTween.transform(shakeController.value),
-                      child: Transform.translate(
-                        offset: _offsetTween.transform(shakeController.value),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(
-                            _radiusTween.transform(controller.value),
+                  child: Builder(
+                    builder: (context) {
+                      if (shakeController.value == 1.0 &&
+                          _state == WarpAnimationState.playing) {
+                        SchedulerBinding.instance.addPostFrameCallback(
+                          (_) => _resetShakeAnimation(),
+                        );
+                      }
+                      return Transform.rotate(
+                        angle: _angleTween.transform(shakeController.value),
+                        child: Transform.translate(
+                          offset: _offsetTween.transform(shakeController.value),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(
+                              _radiusTween.transform(controller.value),
+                            ),
+                            child: child,
                           ),
-                          child: child,
                         ),
-                      ),
-                    );
-                  }),
+                      );
+                    },
+                  ),
                 );
               },
             ),
@@ -205,9 +194,7 @@ class Star {
   final Color initialColor;
   late double angle;
 
-  Star({
-    required this.initialColor,
-  }) : value = 0.0;
+  Star({required this.initialColor}) : value = 0.0;
 
   static const _minOpacity = 0.1;
   static const _maxOpacity = 1.0;
@@ -220,15 +207,13 @@ class Star {
     speed = Offset(cos(angle), sin(angle));
     const minSpeedScale = 20;
     const maxSpeedScale = 35;
-    final speedScale = minSpeedScale +
+    final speedScale =
+        minSpeedScale +
         random.nextInt(maxSpeedScale - minSpeedScale).toDouble();
-    speed = speed.scale(
-      speedScale,
-      speedScale,
-    );
+    speed = speed.scale(speedScale, speedScale);
     final t = speedScale / maxSpeedScale;
     final opacity = _minOpacity + (_maxOpacity - _minOpacity) * t;
-    color = initialColor.withOpacity(opacity);
+    color = initialColor.withValues(alpha: opacity);
   }
 
   draw(Canvas canvas, Rect rect) {
@@ -251,12 +236,13 @@ class Star {
     final endShift = Offset(cos(endShiftAngle), sin(endShiftAngle));
     final shiftedEndPosition = endPosition + (endShift * (1.5 + value * 0.01));
 
-    final path = Path()
-      ..moveTo(startPosition.dx, startPosition.dy)
-      ..lineTo(startPosition.dx, startPosition.dy)
-      ..lineTo(shiftedStartPosition.dx, shiftedStartPosition.dy)
-      ..lineTo(shiftedEndPosition.dx, shiftedEndPosition.dy)
-      ..lineTo(endPosition.dx, endPosition.dy);
+    final path =
+        Path()
+          ..moveTo(startPosition.dx, startPosition.dy)
+          ..lineTo(startPosition.dx, startPosition.dy)
+          ..lineTo(shiftedStartPosition.dx, shiftedStartPosition.dy)
+          ..lineTo(shiftedEndPosition.dx, shiftedEndPosition.dy)
+          ..lineTo(endPosition.dx, endPosition.dy);
 
     if (!rect.contains(startPosition)) {
       _init(rect);
@@ -270,10 +256,7 @@ class Sky extends CustomPainter {
   final List<Star> stars;
   final Color color;
 
-  Sky({
-    required this.stars,
-    required this.color,
-  });
+  Sky({required this.stars, required this.color});
 
   @override
   void paint(Canvas canvas, Size size) {

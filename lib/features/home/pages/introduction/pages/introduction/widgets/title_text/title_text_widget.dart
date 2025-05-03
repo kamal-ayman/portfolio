@@ -16,7 +16,7 @@ class TitleTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flexible(
       child: Column(
-        spacing: 20,
+        spacing: context.isMobile ? 10 : 20,
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -24,9 +24,10 @@ class TitleTextWidget extends StatelessWidget {
             t.intro.subtitle,
             style: Style(
               $text.style.as(context.subTitleTextStyle),
-              _mobile($text.fontSize(25)),
+              _mobile($text.fontSize(16)),
               _tablet($text.fontSize(30)),
               _desktop(),
+              $text.fontWeight.w900(),
               $text.color(context.secondaryColor),
               $text.textAlign.justify(),
               $text.animated.curve.easeInOut(),

@@ -35,33 +35,36 @@ class ProfileImageWidget extends StatelessWidget {
       builder: (context, child) {
         return Transform.rotate(angle: -animation.value, child: child);
       },
-      child: MouseRegion(
-        key: Key('profile_image'),
-        onExit: onExit,
-        onEnter: onEnter,
-        cursor: SystemMouseCursors.click,
-        child: GestureDetector(
-          onTap: onTap,
-          child: Box(
-            key: Key('profile_image_box'),
+      child: Box(
+        style: Style(
+          $box.clipBehavior.antiAliasWithSaveLayer(),
+          $box.borderRadius.all(context.largeRadius.x),
+        ),
+        child: MouseRegion(
+          key: Key('profile_image'),
+          onExit: onExit,
+          onEnter: onEnter,
+          cursor: SystemMouseCursors.click,
+          child: PressableBox(
+            onPress: onTap,
             style: Style(
-              $box.width(300),
-              $box.height(350),
               _mobile($box.width(150), $box.height(200)),
               _tablet($box.width(240), $box.height(290)),
               _desktop($box.width(300), $box.height(350)),
               $box.animated.curve.easeInOut(),
               $box.animated.duration.milliseconds(350),
               _hover($box.border.color(context.primary1Color)),
-              $box.clipBehavior.antiAliasWithSaveLayer(),
-              $box.borderRadius.all(context.largeRadius.x),
             ).applyVariants([
               if (isHovering) _hover,
               if (context.isMobile) _mobile,
               if (context.isTablet) _tablet,
               if (context.isDesktop) _desktop,
             ]),
-            child: Image.asset(AppAssets.profilePic.path, fit: BoxFit.cover),
+            child: ClipRRect(
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              borderRadius: BorderRadius.circular(context.largeRadius.x),
+              child: Image.asset(AppAssets.profilePic.path, fit: BoxFit.cover),
+            ),
           ),
         ),
       ),

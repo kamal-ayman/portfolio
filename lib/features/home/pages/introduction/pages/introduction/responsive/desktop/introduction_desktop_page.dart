@@ -44,9 +44,10 @@ class IntroductionDesktopPage extends StatelessWidget {
                   children: [
                     titleText,
                     summaryText,
-                    Row(
+                    Wrap(
                       spacing: 20,
-                      mainAxisSize: MainAxisSize.min,
+                      runSpacing: 20,
+                      crossAxisAlignment: WrapCrossAlignment.center,
                       children: [cvDownloadButton, socialIconsRow],
                     ),
                   ],

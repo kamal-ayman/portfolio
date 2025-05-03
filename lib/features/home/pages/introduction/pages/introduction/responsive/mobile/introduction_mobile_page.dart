@@ -35,6 +35,7 @@ class IntroductionMobilePage extends StatelessWidget {
           Column(
             spacing: 30,
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               titleText,

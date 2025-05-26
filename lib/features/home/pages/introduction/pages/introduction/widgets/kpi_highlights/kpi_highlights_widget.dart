@@ -8,14 +8,12 @@ class KpiHighlightsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: MediaQuery.sizeOf(context).width,
       child: Wrap(
         spacing: 60,
         runSpacing: 20,
         alignment: WrapAlignment.spaceAround,
-        children: kpiHightlights
-            .map((kpiHighlight) => Flexible(child: kpiHighlight))
-            .toList(),
+        children: kpiHightlights,
       ),
     );
   }

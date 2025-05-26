@@ -28,6 +28,7 @@ class IntroductionDesktopPage extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 30, horizontal: 30),
       child: Column(
         spacing: 20,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Stack(
             alignment: Alignment.center,

@@ -5,3 +5,4 @@ export 'social_icons/social_icons.dart';
 export 'title_text/title_text.dart';
 export 'summary_text/summary_text.dart';
 export 'cv_download_button/cv_download_button.dart';
+export 'kpi_highlights/kpi_highlights.dart';

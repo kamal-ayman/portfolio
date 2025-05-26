@@ -5,10 +5,12 @@ import 'package:portfolio_ui/portfolio_ui.dart';
 import '../../core/core.dart';
 import 'dart:js_interop';
 
+import 'home.dart';
+
 @JS('window.location.reload')
 external void reloadPage();
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   final Widget experience;
   final Widget introduction;
   final IndicatorController controller;
@@ -21,11 +23,16 @@ class HomePage extends StatelessWidget {
   });
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
     return WarpIndicator(
-      indicatorKey: Key('home_page_indicator'),
+      controller: widget.controller,
       skyColor: context.secondaryColor,
-      controller: controller,
+      indicatorKey: Key(HomeKeys.homePageIndicator),
       onRefresh: () async {
         await Future.delayed(const Duration(seconds: 1));
         reloadPage();
@@ -34,8 +41,8 @@ class HomePage extends StatelessWidget {
         body: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: [
-            SliverToBoxAdapter(child: introduction),
-            SliverToBoxAdapter(child: experience),
+            SliverToBoxAdapter(child: widget.introduction),
+            SliverToBoxAdapter(child: widget.experience),
           ],
         ),
       ),

@@ -7,7 +7,8 @@ class IntroductionMobilePage extends StatelessWidget {
   final Widget cvDownloadButton;
   final Widget backgroundHiText;
   final Widget backgroundShadow;
-  final Widget profileImageWidget;
+  final Widget profileImage;
+  final Widget kpiHighlights;
 
   const IntroductionMobilePage({
     super.key,
@@ -17,7 +18,8 @@ class IntroductionMobilePage extends StatelessWidget {
     required this.cvDownloadButton,
     required this.backgroundHiText,
     required this.backgroundShadow,
-    required this.profileImageWidget,
+    required this.profileImage,
+    required this.kpiHighlights,
   });
 
   @override
@@ -39,7 +41,7 @@ class IntroductionMobilePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               titleText,
-              Center(child: profileImageWidget),
+              Center(child: profileImage),
               summaryText,
               Wrap(
                 spacing: 20,
@@ -47,6 +49,7 @@ class IntroductionMobilePage extends StatelessWidget {
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [cvDownloadButton, socialIconsRow],
               ),
+              kpiHighlights,
             ],
           ),
         ],

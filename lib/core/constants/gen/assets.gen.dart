@@ -24,8 +24,11 @@ class $AssetsIconsGen {
   /// File path: assets/icons/linkedin.svg
   String get linkedin => 'assets/icons/linkedin.svg';
 
+  /// File path: assets/icons/phone.svg
+  String get phone => 'assets/icons/phone.svg';
+
   /// List of all assets
-  List<String> get values => [email, facebook, github, linkedin];
+  List<String> get values => [email, facebook, github, linkedin, phone];
 }
 
 class AppAssets {

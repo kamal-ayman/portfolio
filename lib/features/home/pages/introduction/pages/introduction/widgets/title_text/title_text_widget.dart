@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
-import 'package:portfolio/core/extensions/extensions.dart';
 import 'package:portfolio_ui/portfolio_ui.dart';
 
 import 'package:portfolio/core/core.dart';

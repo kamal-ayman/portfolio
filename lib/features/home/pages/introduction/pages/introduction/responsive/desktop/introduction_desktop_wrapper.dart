@@ -12,10 +12,11 @@ class IntroductionDesktopWrapper extends StatelessWidget {
       titleText: const TitleTextWrapper(),
       summaryText: const SummaryTextWrapper(),
       socialIconsRow: const SocialIconsWrapper(),
-      profileImageWidget: const ProfileImageWrapper(),
+      profileImage: const ProfileImageWrapper(),
       backgroundHiText: const BackgroundHiTextWrapper(),
       backgroundShadow: const BackgroundShadowWrapper(),
       cvDownloadButton: const CvDownloadButtonWrapper(),
+      kpiHighlights: const KpiHighlightsWrapper(),
     );
   }
 }

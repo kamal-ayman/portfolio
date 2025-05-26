@@ -13,8 +13,8 @@ class CvDownloadButtonWrapper extends StatelessWidget {
       onTap: () async {
         final url = Uri.parse(Env.cvUrl);
         final isUrlLaunchable = await canLaunchUrl(url);
-        if (!isUrlLaunchable) return;
-        launchUrl(url, mode: LaunchMode.externalApplication);
+        if (!isUrlLaunchable) throw Exception('Could not launch $url');
+        await launchUrl(url);
       },
     );
   }

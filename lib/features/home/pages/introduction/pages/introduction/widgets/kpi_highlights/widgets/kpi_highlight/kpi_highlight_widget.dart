@@ -1,3 +1,4 @@
+import 'package:animated_flip_counter/animated_flip_counter.dart';
 import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
 import 'package:portfolio/core/core.dart';
@@ -5,7 +6,7 @@ import 'package:portfolio_ui/portfolio_ui.dart';
 
 class KpiHighlightWidget extends StatelessWidget {
   final String label;
-  final String value;
+  final num value;
 
   const KpiHighlightWidget({
     super.key,
@@ -19,12 +20,12 @@ class KpiHighlightWidget extends StatelessWidget {
       return Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          StyledText(
-            value,
-            style: Style(
-              $text.style.as(context.h2TextStyle),
-              $text.color(context.primaryColor),
-              $text.textAlign.justify(),
+          AnimatedFlipCounter(
+            value: value,
+            suffix: '+',
+            duration: const Duration(seconds: 1),
+            textStyle: context.h2TextStyle.copyWith(
+              color: context.primaryColor,
             ),
           ),
           StyledText(
@@ -43,13 +44,11 @@ class KpiHighlightWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       spacing: 5,
       children: [
-        StyledText(
-          value,
-          style: Style(
-            $text.style.as(context.h2TextStyle),
-            $text.color(context.primaryColor),
-            $text.textAlign.justify(),
-          ),
+        AnimatedFlipCounter(
+          suffix: '+',
+          value: value,
+          duration: const Duration(seconds: 2),
+          textStyle: context.h2TextStyle.copyWith(color: context.primaryColor),
         ),
         StyledText(
           label,

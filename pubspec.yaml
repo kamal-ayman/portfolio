@@ -4,7 +4,7 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.8.0
+  sdk: ">=3.8.0 <3.9.0"
 
 dependencies:
   cupertino_icons: ^1.0.8
@@ -21,6 +21,9 @@ dependencies:
   mix: ^1.5.4
   flutter_markdown: ^0.7.6+2
   loading_indicator: ^3.1.1
+  animated_flip_counter: ^0.3.4
+  skeletonizer: ^2.0.1
+  video_player: ^2.9.5
 
   # For localization:
   intl: ^0.20.2
@@ -54,7 +57,7 @@ dependencies:
 
 dev_dependencies:
   # For linting:
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
   # For vector graphics:
@@ -71,6 +74,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/videos/
     - assets/profile_pic.webp
     - path: assets/icons/
       transformers:

@@ -9,6 +9,7 @@ class IntroductionMobilePage extends StatelessWidget {
   final Widget backgroundShadow;
   final Widget profileImage;
   final Widget kpiHighlights;
+  final Widget introductionVideoPlayer;
 
   const IntroductionMobilePage({
     super.key,
@@ -20,6 +21,7 @@ class IntroductionMobilePage extends StatelessWidget {
     required this.backgroundShadow,
     required this.profileImage,
     required this.kpiHighlights,
+    required this.introductionVideoPlayer,
   });
 
   @override
@@ -50,6 +52,7 @@ class IntroductionMobilePage extends StatelessWidget {
                 children: [cvDownloadButton, socialIconsRow],
               ),
               kpiHighlights,
+              introductionVideoPlayer,
             ],
           ),
         ],

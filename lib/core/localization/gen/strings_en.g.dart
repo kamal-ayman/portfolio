@@ -62,7 +62,7 @@ class TranslationsIntroEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get subtitle => 'I am Kamal Ayman';
+	String get subtitle => 'I\'m Kamal Ayman';
 	String get title => 'Flutter Developer';
 	String get description => 'I am a Flutter developer with a passion for creating beautiful and functional applications. I have experience in building mobile applications using Flutter and Dart, and I am always eager to learn new technologies and improve my skills.';
 	String get hi => 'HI';
@@ -97,7 +97,7 @@ extension on Translations {
 		switch (path) {
 			case 'app.title': return 'Portfolio';
 			case 'app.description': return 'A personal portfolio showcasing my projects and skills.';
-			case 'intro.subtitle': return 'I am Kamal Ayman';
+			case 'intro.subtitle': return 'I\'m Kamal Ayman';
 			case 'intro.title': return 'Flutter Developer';
 			case 'intro.description': return 'I am a Flutter developer with a passion for creating beautiful and functional applications. I have experience in building mobile applications using Flutter and Dart, and I am always eager to learn new technologies and improve my skills.';
 			case 'intro.hi': return 'HI';

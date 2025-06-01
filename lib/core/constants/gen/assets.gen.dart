@@ -31,6 +31,16 @@ class $AssetsIconsGen {
   List<String> get values => [email, facebook, github, linkedin, phone];
 }
 
+class $AssetsVideosGen {
+  const $AssetsVideosGen();
+
+  /// File path: assets/videos/overview.webm
+  String get overview => 'assets/videos/overview.webm';
+
+  /// List of all assets
+  List<String> get values => [overview];
+}
+
 class AppAssets {
   const AppAssets._();
 
@@ -38,6 +48,7 @@ class AppAssets {
   static const AssetGenImage profilePic = AssetGenImage(
     'assets/profile_pic.webp',
   );
+  static const $AssetsVideosGen videos = $AssetsVideosGen();
 
   /// List of all assets
   static List<AssetGenImage> get values => [profilePic];

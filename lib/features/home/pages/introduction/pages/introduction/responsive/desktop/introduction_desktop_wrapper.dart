@@ -17,6 +17,7 @@ class IntroductionDesktopWrapper extends StatelessWidget {
       backgroundShadow: const BackgroundShadowWrapper(),
       cvDownloadButton: const CvDownloadButtonWrapper(),
       kpiHighlights: const KpiHighlightsWrapper(),
+      introductionVideoPlayer: const IntroductionVideoPlayerWrapper(),
     );
   }
 }

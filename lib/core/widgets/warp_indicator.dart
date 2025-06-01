@@ -132,7 +132,7 @@ class _WarpIndicatorState extends State<WarpIndicator>
           children: <Widget>[
             AnimatedBuilder(
               animation: shakeController,
-              builder: (_, __) {
+              builder: (_, _) {
                 return LayoutBuilder(
                   builder: (BuildContext context, BoxConstraints constraints) {
                     return CustomPaint(
@@ -216,7 +216,7 @@ class Star {
     color = initialColor.withValues(alpha: opacity);
   }
 
-  draw(Canvas canvas, Rect rect) {
+  void draw(Canvas canvas, Rect rect) {
     if (position == null) {
       _init(rect);
     }

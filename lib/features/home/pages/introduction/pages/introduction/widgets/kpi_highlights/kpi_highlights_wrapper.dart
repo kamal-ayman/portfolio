@@ -7,12 +7,12 @@ class KpiHighlightsWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const KpiHighlightsWidget(
+    return KpiHighlightsWidget(
       kpiHightlights: [
-        KpiHighlightWidget(label: 'Years of \nExperience', value: '4+'),
-        KpiHighlightWidget(label: 'Project \nCompleted', value: '20+'),
-        KpiHighlightWidget(label: 'Happy \nClients', value: '50+'),
-        KpiHighlightWidget(label: 'Years of \nExperience', value: '4+'),
+        KpiHighlightWrapper(label: 'Years of \nExperience', value: 4),
+        KpiHighlightWrapper(label: 'Project \nCompleted', value: 20),
+        KpiHighlightWrapper(label: 'Happy \nClients', value: 50),
+        KpiHighlightWrapper(label: 'Years of \nExperience', value: 4),
       ],
     );
   }

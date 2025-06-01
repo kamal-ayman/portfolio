@@ -9,6 +9,7 @@ class IntroductionDesktopPage extends StatelessWidget {
   final Widget backgroundShadow;
   final Widget profileImage;
   final Widget kpiHighlights;
+  final Widget introductionVideoPlayer;
 
   const IntroductionDesktopPage({
     super.key,
@@ -20,6 +21,7 @@ class IntroductionDesktopPage extends StatelessWidget {
     required this.backgroundShadow,
     required this.profileImage,
     required this.kpiHighlights,
+    required this.introductionVideoPlayer,
   });
 
   @override
@@ -39,7 +41,7 @@ class IntroductionDesktopPage extends StatelessWidget {
               ),
               backgroundHiText,
               Row(
-                spacing: 30,
+                spacing: 40,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Flexible(
@@ -59,12 +61,13 @@ class IntroductionDesktopPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  profileImage,
+                  Flexible(child: profileImage),
                 ],
               ),
             ],
           ),
           kpiHighlights,
+          introductionVideoPlayer,
         ],
       ),
     );

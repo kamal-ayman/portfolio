@@ -16,32 +16,8 @@ class KpiHighlightWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (context.isMobile) {
-      return Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          AnimatedFlipCounter(
-            value: value,
-            suffix: '+',
-            duration: const Duration(seconds: 1),
-            textStyle: context.h2TextStyle.copyWith(
-              color: context.primaryColor,
-            ),
-          ),
-          StyledText(
-            label,
-            style: Style(
-              $text.fontSize(16),
-              $text.fontFamily('Sora'),
-              $text.color(context.primaryColor),
-              $text.textAlign.justify(),
-            ),
-          ),
-        ],
-      );
-    }
-    return Row(
-      mainAxisSize: MainAxisSize.min,
+    return Wrap(
+      direction: context.isMobile ? Axis.vertical : Axis.horizontal,
       spacing: 5,
       children: [
         AnimatedFlipCounter(
